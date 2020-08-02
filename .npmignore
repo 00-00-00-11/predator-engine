@@ -1,2 +1,8 @@
 tsconfig.json
 src
+tests
+.git
+.git/
+.vscode/
+.DS_Store
+package-lock.json
