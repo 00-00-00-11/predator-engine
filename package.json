@@ -1,17 +1,28 @@
 {
-  "name": "predator-engine-ts",
+  "name": "predator-engine",
+  "author": "Igor Kov",
   "version": "1.0.0",
-  "description": "Predator engine",
-  "main": "index.js",
+  "license": "MIT",
+  "description": "HTML5 Canvas Game Engine",
+  "keywords": [
+    "gamedev",
+    "engine",
+    "html5",
+    "canvas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/TypeScript.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc && node dist/test.js"
+    "dev": "ts-node --transpile-only src/test.ts"
   },
-  "keywords": [],
-  "author": "Igor Kov",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.0.27",
+    "ts-node": "^8.10.2",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5"
   },

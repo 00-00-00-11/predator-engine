@@ -20,6 +20,10 @@ export default class Container {
      * Get out of the container
      */
     public static make(bindingName: string): object {
+        if (!this.bindings) {
+            return null;
+        }
+
         return this.bindings[bindingName];
     }
 }
