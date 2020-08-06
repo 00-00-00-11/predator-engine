@@ -6,6 +6,7 @@ import Renderer from "../GameObjectComponents/Renderer";
 import BoxRenderer from "../GameObjectComponents/BoxRenderer";
 import GameObjectsManager from "./GameObjectsManager";
 
+// TODO
 export default class GameObject {
 
     // Basic attributes

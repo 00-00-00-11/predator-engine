@@ -76,6 +76,9 @@ export default class Input {
     private mouse: any;
     private keyboard: any;
 
+    /**
+     * Constructor
+     */
     constructor() {
         this.mouse = {
             position: new Vector2(0, 0),
@@ -87,14 +90,14 @@ export default class Input {
     /**
      * Get mouse position
      */
-    getMousePosition() {
+    public getMousePosition(): Vector2 {
         return this.mouse.position;
     }
 
     /**
      * Get mouse button down
      */
-    getMouseButtonDown(mouseCode: number): number {
+    public getMouseButtonDown(mouseCode: number): number {
         if (this.mouse.buttons[mouseCode])
             return this.mouse.buttons[mouseCode];
 
@@ -104,7 +107,7 @@ export default class Input {
     /**
      * Get key down
      */
-    getKeyDown(keyCode: number): number {
+    public getKeyDown(keyCode: number): number {
         if (this.keyboard[keyCode])
             return this.keyboard[keyCode];
 

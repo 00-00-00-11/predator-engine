@@ -1,3 +1,4 @@
+// TODO
 export default class Renderer {
 
     private canvas: HTMLCanvasElement;

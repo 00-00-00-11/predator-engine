@@ -17,7 +17,7 @@ export default class GameObjectsManager {
      */
     destroy(object: GameObject): GameObject {
         for (let i = 0; i < this.gameObjects.length; i++) {
-            if (this.gameObjects[i].name == object.name) {
+            if (this.gameObjects[i].name === object.name) {
                 // Make a copy of the object which should be removed
                 const copy = this.gameObjects[i];
 
@@ -45,7 +45,7 @@ export default class GameObjectsManager {
      */
     getAllByTag(tag: string): GameObject[] {
         return this.gameObjects.filter((gameObject) => {
-            return gameObject.tag == tag;
+            return gameObject.tag === tag;
         });
     }
 
@@ -54,7 +54,7 @@ export default class GameObjectsManager {
      */
     getByName(name: string): GameObject {
         for (const gameObject of this.gameObjects) {
-            if (gameObject.name == name) {
+            if (gameObject.name === name) {
                 return gameObject;
             }
         }
