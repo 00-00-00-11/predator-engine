@@ -1,10 +1,10 @@
 import Container from "../Core/Container";
 import ResourceLoader from "./ResourceLoader";
 
-export default class Scene {
+export default abstract class Scene {
 
-    public imagesUrlArray: string[];
-    public resourceLoader: ResourceLoader;
+    private imagesUrlArray: string[];
+    private resourceLoader: ResourceLoader;
 
     /**
      * Constructor
@@ -25,4 +25,9 @@ export default class Scene {
 
         return this.resourceLoader.load();
     }
+
+    /**
+     * Loads the actual scene
+     */
+    abstract loadScene(): void;
 }

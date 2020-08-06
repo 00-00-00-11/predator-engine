@@ -1,5 +1,6 @@
 export * from "./Core/Color";
 export * from "./Core/Container";
+export * from "./Core/Game";
 export * from "./Core/GameObject";
 export * from "./Core/GameObjectsManager";
 export * from "./Core/Input";

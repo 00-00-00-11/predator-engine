@@ -7,13 +7,15 @@ export default class SceneManager {
      * Adds new scene to the SceneManager
      */
     public add(sceneName: string, scene: Scene): void {
-        this.scenes[sceneName] = Scene;
+        this.scenes[sceneName] = scene;
     }
 
     /**
      * Load scene resources
      */
-    public loadSceneResources(sceneName: string): Promise<any> {
-        return this.scenes[sceneName].loadResources();
+    public async loadSceneResourcesAndCallLoad(sceneName: string): Promise<any> {
+        const scene: Scene = this.scenes[sceneName];
+        await scene.loadResources();
+        scene.loadScene();
     }
 }

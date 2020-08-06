@@ -73,8 +73,8 @@ export default class Input {
         ArrowDown: 40,
         Escape: 27
     };
-    private mouse: any;
-    private keyboard: any;
+    public mouse: any; // TODO to own type
+    public keyboard: any; // TODO to own type
 
     /**
      * Constructor

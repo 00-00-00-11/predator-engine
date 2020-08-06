@@ -1,8 +1,8 @@
 // TODO
 export default class Renderer {
 
-    private canvas: HTMLCanvasElement;
-    private context: CanvasRenderingContext2D;
+    public canvas: HTMLCanvasElement;
+    public context: CanvasRenderingContext2D;
 
     /**
      * Constructor

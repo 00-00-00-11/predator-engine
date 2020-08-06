@@ -7,7 +7,6 @@ import BoxRenderer from "../GameObjectComponents/BoxRenderer";
 import GameObjectsManager from "./GameObjectsManager";
 import Random from "./Random";
 
-// TODO
 export default class GameObject {
 
     // Basic attributes
@@ -22,10 +21,6 @@ export default class GameObject {
     public engineRenderer: EngineRenderer;
     public input: Input;
     public gameObjectsManager: GameObjectsManager;
-    // TODO TYPES
-    public game: object;
-    public sceneManager: object;
-    public resourceLoader: object;
 
     /**
      * Constructor
@@ -43,10 +38,6 @@ export default class GameObject {
         this.engineRenderer = Container.make('Renderer') as EngineRenderer;
         this.input = Container.make('Input') as Input;
         this.gameObjectsManager = Container.make('GameObjectsManager') as GameObjectsManager;
-        // TODO TYPES
-        this.game = Container.make('Game');
-        this.sceneManager = Container.make('SceneManager');
-        this.resourceLoader = Container.make('ResourceLoader');
     }
 
     /**
@@ -54,5 +45,19 @@ export default class GameObject {
      */
     public addRenderer(renderer: Renderer): void {
         this.renderer = renderer;
+    }
+
+    /**
+     * This method is called before update
+     */
+    public draw(): void {
+        // TODO how to draw according to the renderer
+    }
+
+    /**
+     * This method is called once per frame
+     */
+    public update(): void {
+        // Do something
     }
 }
