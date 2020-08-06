@@ -5,6 +5,7 @@ import Container from "./Container";
 import Renderer from "../GameObjectComponents/Renderer";
 import BoxRenderer from "../GameObjectComponents/BoxRenderer";
 import GameObjectsManager from "./GameObjectsManager";
+import Random from "./Random";
 
 // TODO
 export default class GameObject {
@@ -31,7 +32,7 @@ export default class GameObject {
      */
     constructor() {
         // Basic attributes
-        this.name = 'test'; // TODO Generate randomly
+        this.name = Random.string();
         this.tag = 'GameObject';
 
         // Components
