@@ -97,7 +97,7 @@ export default class Input {
     /**
      * Get mouse button down
      */
-    public getMouseButtonDown(mouseCode: number): number {
+    public getMouseButtonDown(mouseCode: number): number | null {
         if (this.mouse.buttons[mouseCode])
             return this.mouse.buttons[mouseCode];
 
@@ -107,7 +107,7 @@ export default class Input {
     /**
      * Get key down
      */
-    public getKeyDown(keyCode: number): number {
+    public getKeyDown(keyCode: number): number | null {
         if (this.keyboard[keyCode])
             return this.keyboard[keyCode];
 

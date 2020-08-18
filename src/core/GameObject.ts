@@ -3,7 +3,7 @@ import EngineRenderer from "./Renderer";
 import Input from "./Input";
 import Container from "./Container";
 import Renderer from "../GameObjectComponents/Renderer";
-import BoxRenderer from "../GameObjectComponents/BoxRenderer";
+import BoxRenderer from "../GameObjectComponents/RectRenderer";
 import GameObjectsManager from "./GameObjectsManager";
 import Random from "./Random";
 
@@ -52,6 +52,8 @@ export default class GameObject {
      */
     public draw(): void {
         // TODO how to draw according to the renderer
+        console.log(typeof this.renderer);
+        process.exit();
     }
 
     /**
