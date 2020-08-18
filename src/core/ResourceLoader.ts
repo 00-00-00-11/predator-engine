@@ -8,20 +8,21 @@ export default class ResourceLoader {
      * Add image to loading queue
      */
     public addImageToQueue(url: string): void {
+        // TODO Throw exception if url is invalid
         this.images.push({
-            name: url.split('/').pop().split('.').shift(),
+            name: String(url.split('/').pop()?.split('.').shift()),
             url,
-            image: null
+            htmlImageElement: null
         });
     }
 
     /**
      * Get html image element by name
      */
-    public getImageObjectByName(name: string): HTMLImageElement {
+    public getHtmlImageElementByName(name: string): HTMLImageElement | null {
         for (const element of this.images) {
             if (element.name === name) {
-                return element.image;
+                return element.htmlImageElement;
             }
         }
 
@@ -33,7 +34,7 @@ export default class ResourceLoader {
      */
     public load(): Promise<any> {
         // All promises
-        const promises = [];
+        const promises: any[] = [];
 
         // Load all images
         this.images.forEach((image) => {
@@ -41,6 +42,7 @@ export default class ResourceLoader {
                 const tmpImage = new Image();
                 tmpImage.src = image.url;
                 tmpImage.onload = () => {
+                    image.htmlImageElement = tmpImage;
                     resolve();
                 };
             }));

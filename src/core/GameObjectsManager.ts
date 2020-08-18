@@ -31,6 +31,8 @@ export default class GameObjectsManager {
                 return copy;
             }
         }
+
+        return object;
     }
 
     /**

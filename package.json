@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^14.0.27",
+    "editorconfig": "^0.15.3",
     "ts-node": "^8.10.2",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5"

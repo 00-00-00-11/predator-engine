@@ -2,7 +2,7 @@
 export default class Renderer {
 
     public canvas: HTMLCanvasElement;
-    public context: CanvasRenderingContext2D;
+    public context: CanvasRenderingContext2D | null;
 
     /**
      * Constructor

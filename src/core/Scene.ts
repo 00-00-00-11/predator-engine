@@ -3,14 +3,14 @@ import ResourceLoader from "./ResourceLoader";
 
 export default abstract class Scene {
 
-    private imagesUrlArray: string[];
+    private imagesUrls: string[];
     private resourceLoader: ResourceLoader;
 
     /**
      * Constructor
      */
-    constructor(imagesUrlArray: string[] = []) {
-        this.imagesUrlArray = imagesUrlArray;
+    constructor(imagesUrls: string[] = []) {
+        this.imagesUrls = imagesUrls;
         this.resourceLoader = Container.make('ResourceLoader') as ResourceLoader;
     }
 
@@ -19,7 +19,7 @@ export default abstract class Scene {
      */
     public loadResources(): Promise<any> {
         // Add scene images to loading queue
-        this.imagesUrlArray.forEach((imageUrl) => {
+        this.imagesUrls.forEach((imageUrl) => {
             this.resourceLoader.addImageToQueue(imageUrl);
         });
 
