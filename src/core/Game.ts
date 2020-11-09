@@ -29,12 +29,12 @@ export default class Game {
         this.resourceLoader = new ResourceLoader();
 
         // Container bindings
-        Container.bind(this);
-        Container.bind(this.renderer);
-        Container.bind(this.input);
-        Container.bind(this.gameObjectsManager);
-        Container.bind(this.sceneManager);
-        Container.bind(this.resourceLoader);
+        Container.bind('Game', this);
+        Container.bind('Renderer', this.renderer);
+        Container.bind('Input', this.input);
+        Container.bind('GameObjectsManager', this.gameObjectsManager);
+        Container.bind('SceneManager', this.sceneManager);
+        Container.bind('ResourceLoader', this.resourceLoader);
 
         // Register listeners
         this.registerListeners();
@@ -50,8 +50,8 @@ export default class Game {
     /**
      * Load a scene and run the game
      */
-    public loadSceneAndRun(sceneName: string): void {
-        this.sceneManager.loadSceneResourcesAndCallLoad(sceneName);
+    public async loadSceneAndRun(sceneName: string): Promise<any> {
+        await this.sceneManager.loadSceneResourcesAndCallLoad(sceneName);
         this.gameLoop(0);
     }
 

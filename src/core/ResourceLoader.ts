@@ -1,8 +1,12 @@
-import Image from "../Types/Image";
+interface MyImage {
+    name: string;
+    url: string;
+    htmlImageElement: HTMLImageElement | null;
+}
 
 export default class ResourceLoader {
 
-    private images: Image[];
+    private images: MyImage[] = [];
 
     /**
      * Add image to loading queue
@@ -37,7 +41,7 @@ export default class ResourceLoader {
         const promises: any[] = [];
 
         // Load all images
-        this.images.forEach((image) => {
+        for (const image of this.images) {
             promises.push(new Promise((resolve, reject) => {
                 const tmpImage = new Image();
                 tmpImage.src = image.url;
@@ -46,7 +50,7 @@ export default class ResourceLoader {
                     resolve();
                 };
             }));
-        });
+        }
 
         return Promise.all(promises);
     }

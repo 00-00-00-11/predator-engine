@@ -1,10 +1,12 @@
 import Container from "../Core/Container";
+import GameObjectsManager from "./GameObjectsManager";
 import ResourceLoader from "./ResourceLoader";
 
 export default abstract class Scene {
 
     private imagesUrls: string[];
     private resourceLoader: ResourceLoader;
+    public gameObjectsManager: GameObjectsManager;
 
     /**
      * Constructor
@@ -12,6 +14,7 @@ export default abstract class Scene {
     constructor(imagesUrls: string[] = []) {
         this.imagesUrls = imagesUrls;
         this.resourceLoader = Container.make('ResourceLoader') as ResourceLoader;
+        this.gameObjectsManager = Container.make('GameObjectsManager') as GameObjectsManager;
     }
 
     /**

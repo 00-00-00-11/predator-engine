@@ -5,15 +5,14 @@ export default class Container {
     /**
      * Bind into container
      */
-    public static bind(object: object): void {
+    public static bind(bindingName: string, object: any): void {
         // Define static property if not defined
         if (!this.bindings) {
             this.bindings = new Map();
         }
 
         // Place object into container
-        const bindingsKey = object.constructor.name;
-        this.bindings.set(bindingsKey, object);
+        this.bindings.set(bindingName, object);
     }
 
     /**

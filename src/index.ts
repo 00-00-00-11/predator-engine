@@ -18,4 +18,3 @@ export * from "./GameObjectComponents/RectRenderer";
 export * from "./GameObjectComponents/CircleRenderer";
 export * from "./GameObjectComponents/Renderer";
 export * from "./GameObjectComponents/Transform";
-export * from "./Types/Image";

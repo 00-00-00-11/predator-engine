@@ -3,11 +3,12 @@ import EngineRenderer from "./Renderer";
 import Input from "./Input";
 import Container from "./Container";
 import Renderer from "../GameObjectComponents/Renderer";
-import BoxRenderer from "../GameObjectComponents/RectRenderer";
 import GameObjectsManager from "./GameObjectsManager";
 import Random from "./Random";
+import RectRenderer from "../GameObjectComponents/RectRenderer";
+import CircleRenderer from "../GameObjectComponents/CircleRenderer";
 
-export default class GameObject {
+export default abstract class GameObject {
 
     // Basic attributes
     public name: string;
@@ -15,7 +16,7 @@ export default class GameObject {
 
     // Components
     public transform: Transform;
-    public renderer: Renderer;
+    public renderer: Renderer | null;
 
     // Engine
     public engineRenderer: EngineRenderer;
@@ -31,8 +32,9 @@ export default class GameObject {
         this.tag = 'GameObject';
 
         // Components
+        // Add default components to gameObject
         this.transform = new Transform();
-        this.renderer = new BoxRenderer();
+        this.renderer = new RectRenderer();
 
         // Engine
         this.engineRenderer = Container.make('Renderer') as EngineRenderer;
@@ -48,18 +50,23 @@ export default class GameObject {
     }
 
     /**
-     * This method is called before update
+     * This method is called before update by Game
      */
     public draw(): void {
+        // switch(typeof this.render)
         // TODO how to draw according to the renderer
-        console.log(typeof this.renderer);
-        process.exit();
+
+        if (this.renderer instanceof RectRenderer) {
+            console.log('I would draw a rect');
+        }
+
+        if (this.renderer instanceof CircleRenderer) {
+            console.log('I would draw a circle');
+        }
     }
 
     /**
-     * This method is called once per frame
+     * This method is called once per frame by Game
      */
-    public update(): void {
-        // Do something
-    }
+    abstract update(): void;
 }
