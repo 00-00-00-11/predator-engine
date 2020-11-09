@@ -1,8 +1,10 @@
 .idea
 node_modules
 .history
+build
 dist
 src/test.ts
+.vscode
 
 # General
 .DS_Store

@@ -1,7 +1,7 @@
 {
-  "name": "predator-engine",
+  "name": "predator-game-engine",
   "author": "Igor Kov",
-  "version": "1.0.2",
+  "version": "0.1.8",
   "license": "MIT",
   "description": "HTML5 Canvas Game Engine",
   "keywords": [
@@ -14,10 +14,10 @@
     "type": "git",
     "url": "https://github.com/igor875126/predator-engine"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf build && tsc",
     "dev": "ts-node --transpile-only src/test.ts"
   },
   "devDependencies": {
