@@ -1,7 +1,7 @@
 {
   "name": "predator-game-engine",
   "author": "Igor Kov",
-  "version": "0.1.17",
+  "version": "0.1.19",
   "license": "MIT",
   "description": "HTML5 Canvas Game Engine",
   "keywords": [

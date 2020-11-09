@@ -16,7 +16,7 @@ export default abstract class GameObject {
 
     // Components
     public transform: Transform;
-    public renderer: Renderer | null;
+    public renderer: Renderer;
 
     // Engine
     public engineRenderer: EngineRenderer;
@@ -53,11 +53,13 @@ export default abstract class GameObject {
      * This method is called before update by Game
      */
     public draw(): void {
-        // switch(typeof this.render)
-        // TODO how to draw according to the renderer
-
         if (this.renderer instanceof RectRenderer) {
-            console.log('I would draw a rect');
+            this.engineRenderer.addRectToRendererQueue(
+                this.transform.position.x,
+                this.transform.position.y,
+                this.transform.dimension.x,
+                this.transform.dimension.y
+            );
         }
 
         if (this.renderer instanceof CircleRenderer) {
