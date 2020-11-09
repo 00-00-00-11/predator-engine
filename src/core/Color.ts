@@ -44,7 +44,7 @@ export default class Color {
      * Alpha setter
      */
     set a(a: number) {
-        // Some controlling that alpha does not go over 1 and dont fall below 0
+        // Some controlling that alpha does not go over 1 and don't fall below 0
         // It is important because otherwise object disappears
         if (a < 0)
             this._a = 0;

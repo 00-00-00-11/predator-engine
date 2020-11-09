@@ -28,7 +28,7 @@ export default class GameObjectsManager {
                 // Destroy from array
                 this.gameObjects.splice(i, 1);
 
-                // Return deleted object, in case this is needet
+                // Return deleted object, in case this is needed
                 return copy;
             }
         }

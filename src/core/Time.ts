@@ -5,28 +5,28 @@ export default class Time {
     /**
      * DeltaTime getter
      */
-    static get deltaTime(): number {
+    public static get deltaTime(): number {
         return this._deltaTime;
     }
 
     /**
      * DeltaTime setter
      */
-    static set deltaTime(deltaTime: number) {
+    public static set deltaTime(deltaTime: number) {
         this._deltaTime = deltaTime;
     }
 
     /**
      * Timestamp getter
      */
-    static get timestamp(): number {
+    public static get timestamp(): number {
         return this._timestamp;
     }
 
     /**
      * Timestamp setter
      */
-    static set timestamp(timestamp: number) {
+    public static set timestamp(timestamp: number) {
         this._timestamp = timestamp;
     }
 }

@@ -83,16 +83,16 @@ export default class Vector2 {
     }
 
     /**
-     * Substract vector from vector or integer from vector
+     * Subtract vector from vector or integer from vector
      */
-    public substract(v: Vector2 | number): Vector2 {
-        return Vector2.substract(this, v);
+    public subtract(v: Vector2 | number): Vector2 {
+        return Vector2.subtract(this, v);
     }
 
     /**
-     * Substract vector from vector or integer from vector
+     * Subtract vector from vector or integer from vector
      */
-    public static substract(v1: Vector2, v2: Vector2 | number): Vector2 {
+    public static subtract(v1: Vector2, v2: Vector2 | number): Vector2 {
         if (v2 instanceof Vector2) {
             return new Vector2(v1.x - v2.x, v1.y - v2.y);
         }
@@ -182,7 +182,7 @@ export default class Vector2 {
      * Interpolates v1 to v2 by fraction
      */
     public static lerp(v1: Vector2, v2: Vector2, fraction: number): Vector2 {
-        return Vector2.add(Vector2.multiply(Vector2.substract(v2, v1), fraction), v1);
+        return Vector2.add(Vector2.multiply(Vector2.subtract(v2, v1), fraction), v1);
     }
 
     /**

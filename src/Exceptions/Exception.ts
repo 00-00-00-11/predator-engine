@@ -1,4 +1,4 @@
-export default class Exception {
+export default class Exception extends Error {
 
     public message: string;
     public code: number;
@@ -7,6 +7,7 @@ export default class Exception {
      * Constructor
      */
     constructor(message: string, code: number = 0) {
+        super(message);
         this.message = message;
         this.code = code;
     }

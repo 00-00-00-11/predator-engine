@@ -2,14 +2,14 @@ export default class Random {
     /**
      * Get random number between range
      */
-    static wholeNumberBetween(min: number, max: number): number {
+    public static wholeNumberBetween(min: number, max: number): number {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     /**
      * Get random string
      */
-    static string(length: number = 8): string {
+    public static string(length: number = 8): string {
         let result = '';
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const charactersLength = characters.length;

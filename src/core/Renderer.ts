@@ -1,16 +1,27 @@
+import RendererException from "../Exceptions/RendererException";
+
 // TODO, refactor, atm it's just a proof of concept
 export default class Renderer {
 
     public canvas: HTMLCanvasElement;
-    public context: CanvasRenderingContext2D | null;
+    public context: CanvasRenderingContext2D;
     private rendererQueue: any[] = [];
 
     /**
      * Constructor
      */
     constructor(canvas: HTMLCanvasElement) {
+        // Get canvas context
+        const context = canvas.getContext('2d');
+
+        // Throw exception if context is not available
+        if (context === null) {
+            throw new RendererException('Renderer context is not available, renderer is not able to draw anything!');
+        }
+
+        // Store canvas and context as class properties
         this.canvas = canvas;
-        this.context = canvas.getContext('2d');
+        this.context = context;
     }
 
     /**
@@ -56,11 +67,11 @@ export default class Renderer {
      * Render rect
      */
     private renderRect(toRender: any): void {
-        this.context!.save();
-        this.context!.beginPath();
-        this.context!.fillStyle = toRender.color;
-        this.context!.fillRect(toRender.x, toRender.y, toRender.width, toRender.height);
-        this.context!.stroke();
-        this.context!.restore();
+        this.context.save();
+        this.context.beginPath();
+        this.context.fillStyle = toRender.color;
+        this.context.fillRect(toRender.x, toRender.y, toRender.width, toRender.height);
+        this.context.stroke();
+        this.context.restore();
     }
 }
