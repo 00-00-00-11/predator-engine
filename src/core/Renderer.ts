@@ -45,7 +45,7 @@ export default class Renderer {
      */
     public flush(): void {
         // Clear the viewport
-        this.context!.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         // Sort render queue by layer
         this.rendererQueue = this.rendererQueue.sort((a, b) => (a.layer > b.layer) ? 1 : -1);

@@ -18,8 +18,7 @@ export default class SceneManager {
         const scene: Scene = this.scenes[sceneName];
 
         // Load all it's resources (wait before loading completes)
-        // TODO DOES NOT WORK
-        // await scene.loadResources();
+        await scene.loadResources();
 
         // Call loadScene method of the scene
         scene.loadScene();

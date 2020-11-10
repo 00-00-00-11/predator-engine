@@ -42,7 +42,7 @@ export default class ResourceLoader {
 
         // Load all images
         for (const image of this.images) {
-            promises.push(new Promise((resolve, reject) => {
+            promises.push(new Promise((resolve) => {
                 const tmpImage = new Image();
                 tmpImage.src = image.url;
                 tmpImage.onload = () => {
