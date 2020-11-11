@@ -12,7 +12,7 @@ export default class Transform {
      */
     constructor() {
         this.position = new Vector2(0, 0);
-        this.dimension = new Vector2(0, 0);
+        this.dimension = new Vector2(1, 1);
         this.angle = 0;
         this.pivot = new Vector2(0, 0);
     }

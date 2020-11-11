@@ -1,4 +1,4 @@
-import GameObject from "./GameObject";
+import GameObject from "../GameObjects/GameObject";
 
 export default class GameObjectsManager {
 
